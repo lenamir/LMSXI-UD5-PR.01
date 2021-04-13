@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <style>
+ .box {float: left;width: 150px; height: 150px; margin: 10px;
+ color: #ddd;padding: 10px;}
+ </style>
+</head>
+<body>
+ <h2>Ejemplo AJAX y JSON</h2>
+ <div id="contenido">
+ <button type="button" onclick="loadJSON()">Cargar JSON</button>
+ </div>
+ <script>
+
+
+ function loadJSON() {
+ 	
+ 	var xhttp = new XMLHttpRequest();
+
+ 	xhttp.onreadystatechange = function () {
+		if (this.readyState == 4 && this.status == 200) {
+ 			DibujarContenido(this.responseText);
+ 		}
+ 	};
+
+ 	xhttp.open("GET", "http://127.0.0.1:8887/abril.json", true);
+ 	xhttp.send();
+ }
+
+ function DibujarContenido(datos) {
+ //datos en formato JSON
+ var objeto = JSON.parse(datos);
+ var html="";
+ //recorreomos el objeto y creamos el html necesario
+ for (i = 0; i < objeto.length; i++) {
+ html=html + objeto[i].fecha;
+ html=html + objeto[i].indicativo;
+ html=html + objeto[i].nombre;
+ html=html + objeto[i].provincia;
+ html=html + objeto[i].altitud;
+ html=html + objeto[i].tmed;
+ html=html + objeto[i].prec;
+ html=html + objeto[i].tmin;
+ html=html + objeto[i].horatmin;
+ html=html + objeto[i].tmax;
+ html=html + objeto[i].horatmax;
+ html=html + objeto[i].presMax;
+ html=html + objeto[i].horaPresMax;
+ html=html + objeto[i].presMin;
+ html=html + objeto[i].horaPresMin;
+ }
+ //volcamos el html en su sitio del DOM
+ document.getElementById("contenido").innerHTML = html;
+ }
+ </script>
+</body>
+</html>

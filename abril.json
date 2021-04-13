@@ -1,0 +1,17 @@
+[ {
+  "fecha" : "2021-04-01",
+  "indicativo" : "1208H",
+  "nombre" : "GIJÓN, PUERTO",
+  "provincia" : "ASTURIAS",
+  "altitud" : "5",
+  "tmed" : "19,9",
+  "prec" : "0,2",
+  "tmin" : "15,6",
+  "horatmin" : "01:20",
+  "tmax" : "24,2",
+  "horatmax" : "07:00",
+  "presMax" : "1014,4",
+  "horaPresMax" : "23",
+  "presMin" : "1007,5",
+  "horaPresMin" : "05"
+} ]
